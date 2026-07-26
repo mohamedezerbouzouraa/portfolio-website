@@ -46,7 +46,7 @@ export const featuredProjects: Project[] = [
     category: "Agentic AI & LLMs",
     name: "INSAT RAG Assistant",
     subtitle: "AI-powered multilingual chatbot for INSAT",
-    image: placeholderImage("insat-rag"),
+    image: "/assets/images/insat-rag-assistant.jfif",
     tags: ["Python", "RAG", "LangChain", "Flask"],
     solution:
       "Built a multilingual assistant to answer student and staff questions about INSAT using retrieval-augmented generation grounded in institutional documents.",
@@ -60,7 +60,7 @@ export const featuredProjects: Project[] = [
     category: "Agentic AI & LLMs",
     name: "RLHF World Cup 2026",
     subtitle: "FIFA World Cup 2026 chatbot that learns from feedback",
-    image: placeholderImage("rlhf-worldcup"),
+    image: "/assets/images/rlhf-worldcup-2026.jfif",
     tags: ["Python", "RLHF", "Groq", "Llama 3.3 70B"],
     solution:
       "Created a World Cup 2026 chatbot that lets users rate every response, using that feedback to continuously adapt future answers.",
@@ -74,7 +74,7 @@ export const featuredProjects: Project[] = [
     category: "Agentic AI & LLMs",
     name: "Reviewify",
     subtitle: "LLM-powered multi-tool agent for HR managers",
-    image: placeholderImage("reviewify"),
+    image: "/assets/images/reviewify.jfif",
     tags: ["Python", "LLM Agent"],
     solution:
       "Built an agent that turns a manager's rough bullet points about an employee into a polished, well-structured performance review.",
@@ -88,7 +88,7 @@ export const featuredProjects: Project[] = [
     category: "Agentic AI & LLMs",
     name: "Student Advisor AI",
     subtitle: "Step-by-step interactive learning chatbot",
-    image: placeholderImage("student-advisor"),
+    image: "/assets/images/student-advisor-ai.jfif",
     tags: ["Python", "Education AI"],
     solution:
       "Designed an interactive chatbot that guides students through concepts step by step, checking understanding along the way.",
@@ -102,7 +102,7 @@ export const featuredProjects: Project[] = [
     category: "Agentic AI & LLMs",
     name: "MatchPicker AI Dashboard",
     subtitle: "Football analytics dashboard with a custom AI chatbot",
-    image: placeholderImage("matchpicker"),
+    image: "/assets/images/matchpicker-ai-dashboard.jfif",
     tags: ["Python", "Sports AI", "Flask"],
     solution:
       "Built a football dashboard combining real-time match analysis and Champions League statistics with a custom-trained chatbot for Q&A.",
@@ -117,7 +117,7 @@ export const featuredProjects: Project[] = [
     category: "Computer Vision",
     name: "YOLOv8 Car Counter",
     subtitle: "Lightweight vehicle detection and counting",
-    image: placeholderImage("yolo-car-counter"),
+    image: "/assets/images/yolov8-car-counter.jpg",
     tags: ["Python", "YOLOv8", "Detection"],
     solution:
       "Built a lightweight system to detect, count, and visualize cars in video footage using bounding boxes.",
@@ -131,7 +131,7 @@ export const featuredProjects: Project[] = [
     category: "Computer Vision",
     name: "Push-Up Counter",
     subtitle: "Pose-based exercise rep counter",
-    image: placeholderImage("pushup-counter"),
+    image: "/assets/images/pushup-counter.jfif",
     tags: ["Python", "MediaPipe", "Pose Estimation"],
     solution:
       "Built a system that automatically counts push-up repetitions from video by analyzing body posture.",
@@ -145,7 +145,7 @@ export const featuredProjects: Project[] = [
     category: "Computer Vision",
     name: "Soccer Team Detection",
     subtitle: "Player detection and team classification",
-    image: placeholderImage("soccer-team-detection"),
+    image: "/assets/images/soccer-team-detection.jfif",
     tags: ["Python", "YOLOv8", "Classification"],
     solution:
       "Built a system that detects football players on the pitch and classifies them into Blue/White teams automatically.",
@@ -160,7 +160,7 @@ export const featuredProjects: Project[] = [
     category: "Classical ML",
     name: "Lifestyle Stability Index",
     subtitle: "Classifying stable vs. unstable daily routines",
-    image: placeholderImage("lifestyle-stability"),
+    image: "/assets/images/lifestyle-stability-index.png",
     tags: ["Python", "SVM", "GridSearchCV"],
     solution:
       "Built a classifier that labels a person's daily routine as STABLE or UNSTABLE from lifestyle signals.",
@@ -174,7 +174,7 @@ export const featuredProjects: Project[] = [
     category: "Classical ML",
     name: "Geo Country Guesser",
     subtitle: "Decision-tree country-guessing game",
-    image: placeholderImage("geo-country-guesser"),
+    image: "/assets/images/geo-country-guesser.png",
     tags: ["Python", "Decision Tree", "Tkinter"],
     solution:
       "Built an interactive game that guesses which country a user is thinking of using geographic and demographic clues.",
@@ -188,7 +188,7 @@ export const featuredProjects: Project[] = [
     category: "Classical ML",
     name: "SpamGuard (SVM)",
     subtitle: "Desktop spam detector using kernel SVM",
-    image: placeholderImage("spamguard"),
+    image: "/assets/images/spamguard.jfif",
     tags: ["Python", "SVM", "NLP"],
     solution:
       "Built a desktop application that flags spam messages using classic NLP and machine learning techniques.",
@@ -202,7 +202,7 @@ export const featuredProjects: Project[] = [
     category: "Classical ML",
     name: "Vehicle Health Predictor",
     subtitle: "Predicting healthy vs. unhealthy vehicles from sensor data",
-    image: placeholderImage("vehicle-health"),
+    image: "/assets/images/vehicle-health-predictor.jfif",
     tags: ["Python", "Logistic Regression"],
     solution:
       "Built a predictive pipeline that classifies vehicles as healthy or unhealthy based on onboard sensor readings.",
@@ -217,7 +217,7 @@ export const featuredProjects: Project[] = [
     category: "Full-Stack & Web",
     name: "Mathematicians Legacy",
     subtitle: "Interactive map of history's mathematicians with an AI guide",
-    image: placeholderImage("mathematicians-legacy"),
+    image: "/assets/images/mathematicians-legacy.jfif",
     tags: ["PHP", "Python", "Symfony", "Gemini"],
     solution:
       "Built a full-stack platform presenting an interactive map of mathematicians throughout history, paired with an AI chatbot for exploration.",
@@ -232,7 +232,7 @@ export const featuredProjects: Project[] = [
     category: "MCP & Tools",
     name: "JobApplication Tracker AI",
     subtitle: "MCP-based job search workflow assistant",
-    image: placeholderImage("job-tracker-mcp"),
+    image: "/assets/images/job-tracker-mcp.png",
     tags: ["MCP", "Pydantic", "prompt_toolkit"],
     solution:
       "Built an AI-powered job application tracker on the Model Context Protocol that automatically organizes applications and monitors their status.",
