@@ -2,7 +2,8 @@
 
 Personal portfolio of **Mohamed Ezer Bouzouraa**, a software and AI engineer based in Tunis, Tunisia, currently studying Software & AI Engineering at INSAT.
 
-Built with React 19, TypeScript, Vite, Tailwind CSS v4, and Motion, adapted from the [laninh-tech/AI-Engineer-Portfolio](https://github.com/laninh-tech/AI-Engineer-Portfolio) architecture.
+Built with React 19, TypeScript, Vite, Tailwind CSS v4, and Motion.
+Link : https://mohamedezerbouzouraa.github.io/portfolio-website/
 
 ## Features
 
