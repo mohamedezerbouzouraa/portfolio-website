@@ -1,5 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+
 import {
   ArrowRight,
   BookOpen,
