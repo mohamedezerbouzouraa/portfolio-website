@@ -64,6 +64,7 @@ export default function App() {
   const [lang, setLang] = useState<Language>("en");
   const baseUrl = import.meta.env.BASE_URL;
   const cvFileUrl = `${baseUrl}Mohamed_Ezer_Resume.pdf`;
+  const portraitUrl = `${baseUrl}assets/images/mohamedezer.png`;
 
   const t = translations[lang];
   const totalProjects = featuredProjects.length;
@@ -136,7 +137,17 @@ export default function App() {
                 <div className="absolute inset-0 rounded-2xl bg-cyan-500/10 blur-2xl animate-pulse" />
 
                 <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden border border-cyan-500/20 bg-gradient-to-br from-cyan-500/15 via-slate-900/40 to-blue-900/20 shadow-xl shadow-cyan-500/15 flex items-center justify-center">
-                  <span className="text-7xl sm:text-8xl font-bold font-display text-cyan-400/90 tracking-tight">
+                  <img
+                    src={portraitUrl}
+                    alt="Mohamed Ezer Bouzouraa"
+                    className="w-full h-full object-cover"
+                    onError={(event) => {
+                      event.currentTarget.style.display = "none";
+                      const fallback = event.currentTarget.nextElementSibling as HTMLElement | null;
+                      if (fallback) fallback.classList.remove("hidden");
+                    }}
+                  />
+                  <span className="hidden text-7xl sm:text-8xl font-bold font-display text-cyan-400/90 tracking-tight">
                     MEB
                   </span>
                 </div>
