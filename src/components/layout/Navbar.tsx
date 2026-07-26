@@ -1,85 +1,109 @@
-import { FormEvent, useState } from "react";
-import { CheckCircle2, Send } from "lucide-react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { Language } from "../../locales/translations";
 
-type ContactFormProps = {
+type NavbarProps = {
+  theme: string;
+  toggleTheme: () => void;
+  lang: Language;
+  setLang: (lang: Language) => void;
   t: any;
 };
 
-export const ContactForm = ({ t }: ContactFormProps) => {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-
-  const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    setStatus("loading");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setStatus("idle"), 5000);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
+export const Navbar = ({ theme, toggleTheme, lang, setLang, t }: NavbarProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navItems = [
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.skills, href: "#skills" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.education, href: "#education" },
+    { name: t.nav.blogs, href: "#blogs" },
+    { name: t.nav.contact, href: "#contact" },
+  ];
 
   return (
-    <form onSubmit={handleSubmit} className="h-full flex flex-col gap-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <label className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">{t.contact.form.name}</label>
-          <input
-            required
-            type="text"
-            value={formData.name}
-            onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-            className="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl px-4 py-3 text-[var(--text-primary)] focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 outline-none transition-all"
-            placeholder={t.contact.form.placeholderName}
-          />
+    <nav className="fixed top-0 left-0 w-full z-50 glass border-b border-[var(--border-color)]">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="text-xl font-bold text-[var(--text-primary)] tracking-tighter font-display"
+        >
+          MEB<span className="text-cyan-400">.</span>
+        </motion.div>
+
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-[var(--text-secondary)] hover:text-cyan-400 transition-colors"
+            >
+              {item.name}
+            </a>
+          ))}
+          <div className="flex items-center gap-2 border-l border-[var(--border-color)] pl-6 ml-2">
+            <button
+              onClick={() => setLang(lang === "en" ? "fr" : "en")}
+              className="px-3 py-1.5 rounded-xl font-bold bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-cyan-500/10 hover:text-cyan-400 transition-all text-sm border border-[var(--border-color)]"
+            >
+              {lang.toUpperCase()}
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-xl bg-[var(--bg-secondary)] text-cyan-400 hover:bg-cyan-500/10 transition-all border border-[var(--border-color)]"
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
         </div>
-        <div className="space-y-2">
-          <label className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">{t.contact.form.email}</label>
-          <input
-            required
-            type="email"
-            value={formData.email}
-            onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-            className="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl px-4 py-3 text-[var(--text-primary)] focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 outline-none transition-all"
-            placeholder="email@example.com"
-          />
+
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            onClick={() => setLang(lang === "en" ? "fr" : "en")}
+            className="px-2 py-1 rounded-lg font-bold bg-[var(--bg-secondary)] text-[var(--text-primary)] text-xs border border-[var(--border-color)]"
+          >
+            {lang.toUpperCase()}
+          </button>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-xl bg-[var(--bg-secondary)] text-cyan-400 border border-[var(--border-color)]"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] ml-1"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
-      <div className="space-y-2 flex-1 min-h-[260px] flex flex-col">
-        <label className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">{t.contact.form.message}</label>
-        <textarea
-          required
-          rows={7}
-          value={formData.message}
-          onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-          className="w-full h-full min-h-[220px] bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl px-4 py-3 text-[var(--text-primary)] focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 outline-none transition-all resize-none"
-          placeholder={t.contact.form.placeholderMsg}
-        />
-      </div>
-      <button
-        disabled={status === "loading"}
-        className="ui-hover mt-auto w-full md:w-fit px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-      >
-        {status === "loading"
-          ? t.contact.form.sending
-          : status === "success"
-            ? t.contact.form.success
-            : t.contact.form.send}
-        {status === "success" ? <CheckCircle2 size={18} /> : <Send size={18} />}
-      </button>
-    </form>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden glass border-b border-[var(--border-color)] overflow-hidden"
+          >
+            <div className="flex flex-col p-6 gap-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-lg font-medium text-[var(--text-secondary)] hover:text-cyan-400"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
