@@ -163,6 +163,20 @@ export const featuredProjects: Project[] = [
   // Classical ML
   {
     category: "Classical ML",
+    name: "Face Verify PCA",
+    subtitle: "Face reconstruction and verification using PCA",
+    image: localImage("face-verify-pca.jfif"),
+    tags: ["Python", "PCA", "Computer Vision"],
+    solution:
+      "Built a face verification tool that reconstructs a grayscale face image from a PCA (eigenface) model and compares it to the original to flag mismatches.",
+    tech:
+      "NumPy and Pillow for loading and preprocessing grayscale face images, a custom PCA pipeline for dimensionality reduction and reconstruction, and Matplotlib to visualize the original, reconstructed, and difference-heatmap images side by side.",
+    result:
+      "Produces an interpretable reconstruction-distance and MSE score per image, giving a lightweight way to flag faces that don't match the trained identity model.",
+    github: "https://github.com/mohamedezerbouzouraa/face-verify-pca",
+  },
+  {
+    category: "Classical ML",
     name: "Lifestyle Stability Index",
     subtitle: "Classifying stable vs. unstable daily routines",
     image: localImage("lifestyle-stability-index.png"),
@@ -250,6 +264,14 @@ export const featuredProjects: Project[] = [
 ];
 
 const projectContentFr: Record<string, { solution: string; tech: string; result: string }> = {
+  "https://github.com/mohamedezerbouzouraa/face-verify-pca": {
+    solution:
+      "Outil de vérification faciale qui reconstruit une image de visage en niveaux de gris à partir d'un modèle PCA (eigenfaces) et la compare à l'original pour détecter les incohérences.",
+    tech:
+      "NumPy et Pillow pour le chargement et le prétraitement des images de visage en niveaux de gris, un pipeline PCA maison pour la réduction de dimension et la reconstruction, et Matplotlib pour visualiser côte à côte l'image originale, reconstruite et la carte de différence.",
+    result:
+      "Fournit un score de distance de reconstruction et de MSE interprétable par image, permettant de signaler facilement les visages qui ne correspondent pas au modèle d'identité entraîné.",
+  },
   "https://github.com/mohamedezerbouzouraa/INSAT-RAG-assistant": {
     solution:
       "Assistant multilingue conçu pour répondre aux questions des étudiants et du personnel de l'INSAT grâce à une génération augmentée par récupération de documents institutionnels.",
