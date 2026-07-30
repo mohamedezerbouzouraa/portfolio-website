@@ -8,12 +8,12 @@ type ProjectModalProps = {
   project: Project;
   onClose: () => void;
   t: any;
-  lang: Language;
-};
+  lang: Language;};
 
 export const ProjectModal = ({ project, onClose, t, lang }: ProjectModalProps) => {
   const localizedContent = getLocalizedProjectContent(project, lang);
 
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
