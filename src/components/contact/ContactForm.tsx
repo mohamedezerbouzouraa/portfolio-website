@@ -2,8 +2,7 @@ import { FormEvent, useState } from "react";
 import { CheckCircle2, Send } from "lucide-react";
 
 type ContactFormProps = {
-  t: any;
-};
+  t: any;};
 
 export const ContactForm = ({ t }: ContactFormProps) => {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
