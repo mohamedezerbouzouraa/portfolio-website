@@ -32,7 +32,7 @@ export const categoryOrder: ProjectCategory[] = [
 export const categoryLabels: Record<ProjectCategory, string> = {
   "Agentic AI & LLMs": "Agentic AI & LLMs",
   "Computer Vision": "Computer Vision",
-  "Classical ML": "Classical ML",
+  "Classical ML": "Classical ML & DL",
   "Full-Stack & Web": "Full-Stack & Web",
   "MCP & Tools": "Model Context Protocol",
 };
@@ -163,6 +163,20 @@ export const featuredProjects: Project[] = [
   // Classical ML
   {
     category: "Classical ML",
+    name: "RadioDx-COVID",
+    subtitle: "Chest X-ray classifier for COVID-19, viral pneumonia, and normal cases",
+    image: localImage("thumbnail_covid_project.png"),
+    tags: ["Python", "PyTorch", "ResNet18", "Transfer Learning"],
+    solution:
+      "Built a deep learning model that classifies chest X-rays into Normal, Viral Pneumonia, or COVID-19, trained on the Kaggle COVID-19 Radiography Database.",
+    tech:
+      "A ResNet18 pretrained on ImageNet used as a feature extractor with a retrained final layer for the 3-class problem, a custom PyTorch Dataset class that balances classes by random sampling, horizontal-flip augmentation during training, and early stopping once validation accuracy reaches 95%.",
+    result:
+      "Delivers an end-to-end pipeline, from raw dataset preparation to training and prediction visualization, with correct/incorrect predictions highlighted in green/red.",
+    github: "https://github.com/mohamedezerbouzouraa/RadioDx-COVID",
+  },
+  {
+    category: "Classical ML",
     name: "Face Verify PCA",
     subtitle: "Face reconstruction and verification using PCA",
     image: localImage("face-verify-pca.jfif"),
@@ -264,6 +278,14 @@ export const featuredProjects: Project[] = [
 ];
 
 const projectContentFr: Record<string, { solution: string; tech: string; result: string }> = {
+  "https://github.com/mohamedezerbouzouraa/RadioDx-COVID": {
+    solution:
+      "Modèle de deep learning qui classe les radiographies pulmonaires en Normal, Pneumonie Virale ou COVID-19, entraîné sur la base de données Kaggle COVID-19 Radiography Database.",
+    tech:
+      "ResNet18 pré-entraîné sur ImageNet utilisé comme extracteur de caractéristiques avec une dernière couche réentraînée pour le problème à 3 classes, une classe Dataset PyTorch personnalisée équilibrant les classes par échantillonnage aléatoire, une augmentation par retournement horizontal pendant l'entraînement, et un arrêt anticipé une fois 95% de précision de validation atteinte.",
+    result:
+      "Fournit un pipeline complet, de la préparation des données brutes jusqu'à l'entraînement et la visualisation des prédictions, avec les prédictions correctes/incorrectes surlignées en vert/rouge.",
+  },
   "https://github.com/mohamedezerbouzouraa/face-verify-pca": {
     solution:
       "Outil de vérification faciale qui reconstruit une image de visage en niveaux de gris à partir d'un modèle PCA (eigenfaces) et la compare à l'original pour détecter les incohérences.",
