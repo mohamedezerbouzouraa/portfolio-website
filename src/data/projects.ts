@@ -191,6 +191,20 @@ export const featuredProjects: Project[] = [
   },
   {
     category: "Classical ML",
+    name: "SpamGuard (SVM)",
+    subtitle: "Desktop spam detector using kernel SVM",
+    image: localImage("spamguard.jfif"),
+    tags: ["Python", "SVM", "NLP"],
+    solution:
+      "Built a desktop application that flags spam messages using classic NLP and machine learning techniques.",
+    tech:
+      "TF-IDF text vectorization feeding a Support Vector Machine with the kernel trick, wrapped in a Tkinter GUI.",
+    result:
+      "Provides a lightweight, offline-capable spam classifier with a simple desktop interface.",
+    github: "https://github.com/mohamedezerbouzouraa/SpamGuard--SVM-using-kernel-trick-",
+  },
+  {
+    category: "Classical ML",
     name: "Lifestyle Stability Index",
     subtitle: "Classifying stable vs. unstable daily routines",
     image: localImage("lifestyle-stability-index.png"),
@@ -216,20 +230,6 @@ export const featuredProjects: Project[] = [
     result:
       "Produces a fun, interpretable demonstration of decision-tree reasoning through a playable guessing game.",
     github: "https://github.com/mohamedezerbouzouraa/GEO_Country_Guesser_Using_Decision_Tree",
-  },
-  {
-    category: "Classical ML",
-    name: "SpamGuard (SVM)",
-    subtitle: "Desktop spam detector using kernel SVM",
-    image: localImage("spamguard.jfif"),
-    tags: ["Python", "SVM", "NLP"],
-    solution:
-      "Built a desktop application that flags spam messages using classic NLP and machine learning techniques.",
-    tech:
-      "TF-IDF text vectorization feeding a Support Vector Machine with the kernel trick, wrapped in a Tkinter GUI.",
-    result:
-      "Provides a lightweight, offline-capable spam classifier with a simple desktop interface.",
-    github: "https://github.com/mohamedezerbouzouraa/SpamGuard--SVM-using-kernel-trick-",
   },
   {
     category: "Classical ML",
