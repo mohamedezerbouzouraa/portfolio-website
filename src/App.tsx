@@ -1,6 +1,5 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-
 import {
   ArrowRight,
   BookOpen,
@@ -37,6 +36,7 @@ import {
 } from "./data/projects";
 import { blogs } from "./data/blogs";
 import { spokenLanguages } from "./data/languages";
+import { experience } from "./data/experience";
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -501,6 +501,68 @@ export default function App() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </motion.section>
+
+        <motion.section
+          id="experience"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="section-spacing space-y-16 scroll-mt-24"
+        >
+          <div className="text-center space-y-4">
+            <motion.h3 variants={fadeIn} className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] font-display tracking-tight">
+              {t.experience.title}
+            </motion.h3>
+            <motion.p variants={fadeIn} className="text-[var(--text-secondary)] text-base md:text-lg">
+              {t.experience.subtitle}
+            </motion.p>
+          </div>
+
+          <div className="relative max-w-4xl mx-auto space-y-6">
+            {experience.map((job) => (
+              <motion.div
+                key={`${job.company}-${job.role}`}
+                variants={fadeIn}
+                className="rounded-2xl glass border border-[var(--border-color)] p-6 md:p-8 flex flex-col md:flex-row gap-6"
+              >
+                <div className="flex items-start gap-4 md:w-72 shrink-0">
+                  <div className="w-12 h-12 min-w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-lg font-bold font-mono text-cyan-400">
+                    {job.companyLogoInitial}
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-[var(--text-primary)] font-display leading-snug">{job.role}</h4>
+                    <p className="text-[var(--text-secondary)] text-sm mt-1">
+                      {job.company} · {job.type}
+                    </p>
+                    <p className="text-xs font-mono text-cyan-400/80 mt-2">
+                      {job.current ? job.period.replace("Present", t.experience.current) : job.period}
+                    </p>
+                    {job.location && <p className="text-xs font-mono text-[var(--text-secondary)] mt-1">{job.location}</p>}
+                    {job.current && (
+                      <span className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-semibold border border-emerald-500/20">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                        </span>
+                        {t.experience.current}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <ul className="flex-1 space-y-2.5 md:border-l md:border-[var(--border-color)] md:pl-6">
+                  {(lang === "fr" ? job.bulletsFr : job.bulletsEn).map((bullet, idx) => (
+                    <li key={idx} className="text-sm text-[var(--text-secondary)] leading-relaxed flex gap-2.5">
+                      <span className="text-cyan-400 mt-1">▹</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </motion.section>
 
