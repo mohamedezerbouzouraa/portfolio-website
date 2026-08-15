@@ -12,22 +12,6 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    role: "AI Engineer & Full-Stack Developer",
-    company: "Wusul Studio",
-    companyLogoInitial: "و",
-    type: "Internship",
-    period: "Aug 2026 - Present",
-    current: true,
-    bulletsEn: [
-      "Developed a full-stack platform for house listings and relocation services, connecting property owners with clients, with all interactions managed through an admin dashboard.",
-      "Built a chatbot that streamlines the platform's services entirely through simple messaging.",
-    ],
-    bulletsFr: [
-      "Développé une plateforme full-stack pour les annonces immobilières et les services de relocation, connectant propriétaires et clients, avec toutes les interactions gérées via un tableau de bord admin.",
-      "Développé un chatbot qui simplifie l'ensemble des services de la plateforme via de simples messages.",
-    ],
-  },
-  {
     role: "AI Engineer",
     company: "VisShop AI",
     companyLogoInitial: "V",
@@ -44,6 +28,22 @@ export const experience: ExperienceEntry[] = [
       "Développé un modèle de suivi des clients pour surveiller les mouvements et comportements en magasin à partir d'images de caméra.",
       "Construit un pipeline de détection identifiant les zones les plus attractives et à fort engagement en magasin, basé sur les habitudes de circulation des clients.",
       "Conçu un interpréteur IA qui génère des remarques et des insights en langage naturel directement à partir des images vidéo.",
+    ],
+  },
+  {
+    role: "AI Engineer & Full-Stack Developer",
+    company: "Wusul Studio",
+    companyLogoInitial: "و",
+    type: "Internship",
+    period: "Aug 2026 - Present",
+    current: true,
+    bulletsEn: [
+      "Developed a full-stack platform for house listings and relocation services, connecting property owners with clients, with all interactions managed through an admin dashboard.",
+      "Built a chatbot that streamlines the platform's services entirely through simple messaging.",
+    ],
+    bulletsFr: [
+      "Développé une plateforme full-stack pour les annonces immobilières et les services de relocation, connectant propriétaires et clients, avec toutes les interactions gérées via un tableau de bord admin.",
+      "Développé un chatbot qui simplifie l'ensemble des services de la plateforme via de simples messages.",
     ],
   },
 ];
