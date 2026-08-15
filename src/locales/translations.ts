@@ -4,6 +4,7 @@ export const translations = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      experience: "Experience",
       education: "Education",
       blogs: "Blogs",
       languages: "Languages",
@@ -41,6 +42,11 @@ export const translations = {
       tech: "Technical Details",
       result: "Key Results",
       details: "Details",
+    },
+    experience: {
+      title: "Experience",
+      subtitle: "Hands-on AI engineering work, from computer vision pipelines to full-stack products.",
+      current: "Present",
     },
     education: {
       title: "Education",
@@ -88,7 +94,7 @@ export const translations = {
       title: "Ezer's AI Assistant",
       placeholder: "Ask me anything...",
       prompt:
-        "You are the virtual assistant for Mohamed Ezer Bouzouraa, a self-taught software and AI engineer based in Tunis, Tunisia, currently studying at INSAT. Answer questions based on this info: skills include Python, JavaScript, C/C++, Java, PHP, SQL, TensorFlow, PyTorch, scikit-learn, Deep Learning, LLMs, RAG, NumPy, Pandas, Matplotlib, MediaPipe, YOLOv8, Flask, Symfony, Git, Linux, REST APIs. Contact email: mrezeryt178@gmail.com. Featured projects include INSAT RAG Assistant, RLHF World Cup 2026, Reviewify, Student Advisor AI, MatchPicker AI Dashboard, YOLOv8 Car Counter, Push-Up Counter, Soccer Team Detection, Lifestyle Stability Index, Geo Country Guesser, SpamGuard, Vehicle Health Predictor, Mathematicians Legacy, and a JobApplication Tracker AI built with MCP. He is open to internship and collaboration opportunities in AI/software engineering. Answer briefly, kindly, and professionally in English. Question: ",
+        "You are the virtual assistant for Mohamed Ezer Bouzouraa, a self-taught software and AI engineer based in Tunis, Tunisia, currently studying at INSAT. Answer questions based on this info: skills include Python, JavaScript, C/C++, Java, PHP, SQL, TensorFlow, PyTorch, scikit-learn, Deep Learning, LLMs, RAG, NumPy, Pandas, Matplotlib, MediaPipe, YOLOv8, Flask, Symfony, Git, Linux, REST APIs. Contact email: mrezeryt178@gmail.com. He is currently interning as an AI Engineer & Full-Stack Developer at Wusul Studio (Aug 2026 - Present), building a full-stack platform for house listings and relocation services with a chatbot. He previously interned as an AI Engineer at VisShop AI (Jun-Aug 2026, remote), building a client-tracking computer vision model for in-store behavior analysis. Featured projects include INSAT RAG Assistant, RLHF World Cup 2026, Reviewify, Student Advisor AI, MatchPicker AI Dashboard, YOLOv8 Car Counter, Push-Up Counter, Soccer Team Detection, RadioDx-COVID, Face Verify PCA, Lifestyle Stability Index, Geo Country Guesser, SpamGuard, Vehicle Health Predictor, Mathematicians Legacy, and a JobApplication Tracker AI built with MCP. He is open to internship and collaboration opportunities in AI/software engineering. Answer briefly, kindly, and professionally in English. Question: ",
     },
   },
   fr: {
@@ -96,6 +102,7 @@ export const translations = {
       about: "À propos",
       skills: "Compétences",
       projects: "Projets",
+      experience: "Expérience",
       education: "Formation",
       blogs: "Blogs",
       languages: "Langues",
@@ -133,6 +140,11 @@ export const translations = {
       tech: "Détails Techniques",
       result: "Résultats Clés",
       details: "Détails",
+    },
+    experience: {
+      title: "Expérience",
+      subtitle: "Travail concret en ingénierie IA, des pipelines de vision par ordinateur aux produits full-stack.",
+      current: "Aujourd'hui",
     },
     education: {
       title: "Formation",
@@ -180,7 +192,7 @@ export const translations = {
       title: "Assistant IA d'Ezer",
       placeholder: "Posez-moi une question...",
       prompt:
-        "Tu es l'assistant virtuel de Mohamed Ezer Bouzouraa, ingénieur logiciel et IA autodidacte basé à Tunis, en Tunisie, actuellement étudiant à l'INSAT. Réponds aux questions en te basant sur ces informations : compétences en Python, JavaScript, C/C++, Java, PHP, SQL, TensorFlow, PyTorch, scikit-learn, Deep Learning, LLMs, RAG, NumPy, Pandas, Matplotlib, MediaPipe, YOLOv8, Flask, Symfony, Git, Linux, REST APIs. Email de contact : mrezeryt178@gmail.com. Projets phares : INSAT RAG Assistant, RLHF World Cup 2026, Reviewify, Student Advisor AI, MatchPicker AI Dashboard, YOLOv8 Car Counter, Push-Up Counter, Soccer Team Detection, Lifestyle Stability Index, Geo Country Guesser, SpamGuard, Vehicle Health Predictor, Mathematicians Legacy, et un JobApplication Tracker AI basé sur MCP. Il est ouvert aux opportunités de stage et de collaboration en IA/génie logiciel. Réponds brièvement, gentiment et professionnellement en français. Question : ",
+        "Tu es l'assistant virtuel de Mohamed Ezer Bouzouraa, ingénieur logiciel et IA autodidacte basé à Tunis, en Tunisie, actuellement étudiant à l'INSAT. Réponds aux questions en te basant sur ces informations : compétences en Python, JavaScript, C/C++, Java, PHP, SQL, TensorFlow, PyTorch, scikit-learn, Deep Learning, LLMs, RAG, NumPy, Pandas, Matplotlib, MediaPipe, YOLOv8, Flask, Symfony, Git, Linux, REST APIs. Email de contact : mrezeryt178@gmail.com. Il effectue actuellement un stage d'Ingénieur IA & Développeur Full-Stack chez Wusul Studio (depuis août 2026), où il construit une plateforme full-stack pour les annonces immobilières avec un chatbot. Il a auparavant effectué un stage d'Ingénieur IA chez VisShop AI (juin-août 2026, à distance), construisant un modèle de suivi client par vision par ordinateur. Projets phares : INSAT RAG Assistant, RLHF World Cup 2026, Reviewify, Student Advisor AI, MatchPicker AI Dashboard, YOLOv8 Car Counter, Push-Up Counter, Soccer Team Detection, RadioDx-COVID, Face Verify PCA, Lifestyle Stability Index, Geo Country Guesser, SpamGuard, Vehicle Health Predictor, Mathematicians Legacy, et un JobApplication Tracker AI basé sur MCP. Il est ouvert aux opportunités de stage et de collaboration en IA/génie logiciel. Réponds brièvement, gentiment et professionnellement en français. Question : ",
     },
   },
 };
