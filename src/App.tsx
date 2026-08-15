@@ -5,6 +5,7 @@ import {
   BookOpen,
   Brain,
   BrainCircuit,
+  Briefcase,
   ChevronLeft,
   ChevronRight,
   Code2,
@@ -521,28 +522,39 @@ export default function App() {
             </motion.p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto space-y-6">
-            {experience.map((job) => (
-              <motion.div
-                key={`${job.company}-${job.role}`}
-                variants={fadeIn}
-                className="rounded-2xl glass border border-[var(--border-color)] p-6 md:p-8 flex flex-col md:flex-row gap-6"
-              >
-                <div className="flex items-start gap-4 md:w-72 shrink-0">
-                  <div className="w-12 h-12 min-w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-lg font-bold font-mono text-cyan-400">
-                    {job.companyLogoInitial}
+          <div className="relative max-w-5xl mx-auto mt-16">
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent hidden md:block" />
+
+            {experience.map((job, index) => {
+              const isLeft = index % 2 === 0;
+              const bullets = lang === "fr" ? job.bulletsFr : job.bulletsEn;
+              const periodLabel = job.current ? job.period.replace("Present", t.experience.current) : job.period;
+
+              const cardBody = (
+                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full">
+                  <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:justify-end md:flex-row-reverse" : ""}`}>
+                    <div className="w-10 h-10 min-w-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-sm font-bold font-mono text-cyan-400">
+                      {job.companyLogoInitial}
+                    </div>
+                    <div className={isLeft ? "md:text-right" : ""}>
+                      <h4 className="text-xl font-bold text-[var(--text-primary)] font-display leading-snug">{job.role}</h4>
+                      <p className="text-cyan-400 text-sm font-medium mt-0.5">
+                        {job.company} · {job.type}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-[var(--text-primary)] font-display leading-snug">{job.role}</h4>
-                    <p className="text-[var(--text-secondary)] text-sm mt-1">
-                      {job.company} · {job.type}
-                    </p>
-                    <p className="text-xs font-mono text-cyan-400/80 mt-2">
-                      {job.current ? job.period.replace("Present", t.experience.current) : job.period}
-                    </p>
-                    {job.location && <p className="text-xs font-mono text-[var(--text-secondary)] mt-1">{job.location}</p>}
+
+                  <div className={`flex flex-wrap gap-2 mb-4 ${isLeft ? "md:justify-end" : ""}`}>
+                    <span className="text-[var(--text-secondary)] text-xs bg-[var(--bg-secondary)] px-3 py-1 rounded-lg border border-[var(--border-color)] font-mono">
+                      {periodLabel}
+                    </span>
+                    {job.location && (
+                      <span className="text-[var(--text-secondary)] text-xs bg-[var(--bg-secondary)] px-3 py-1 rounded-lg border border-[var(--border-color)] font-mono">
+                        {job.location}
+                      </span>
+                    )}
                     {job.current && (
-                      <span className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-semibold border border-emerald-500/20">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-semibold border border-emerald-500/20">
                         <span className="relative flex h-1.5 w-1.5">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
@@ -551,18 +563,43 @@ export default function App() {
                       </span>
                     )}
                   </div>
-                </div>
 
-                <ul className="flex-1 space-y-2.5 md:border-l md:border-[var(--border-color)] md:pl-6">
-                  {(lang === "fr" ? job.bulletsFr : job.bulletsEn).map((bullet, idx) => (
-                    <li key={idx} className="text-sm text-[var(--text-secondary)] leading-relaxed flex gap-2.5">
-                      <span className="text-cyan-400 mt-1">▹</span>
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                  <ul className="space-y-2">
+                    {bullets.map((bullet, bulletIdx) => (
+                      <li
+                        key={bulletIdx}
+                        className={`text-sm text-[var(--text-secondary)] leading-relaxed flex gap-2 ${isLeft ? "md:flex-row-reverse md:text-right" : ""}`}
+                      >
+                        <span className="text-cyan-400 mt-0.5 shrink-0">▹</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+
+              return (
+                <motion.div
+                  key={`${job.company}-${job.role}`}
+                  variants={fadeIn}
+                  className="relative mb-12 last:mb-0 flex flex-col md:flex-row md:items-stretch"
+                >
+                  <div className={`w-full md:w-1/2 ${isLeft ? "md:pr-12 lg:pr-16" : "md:order-2 md:pl-12 lg:pl-16"} mb-4 md:mb-0 flex flex-col justify-center`}>
+                    {cardBody}
+                  </div>
+
+                  <div
+                    className={`hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-8 border-[var(--bg-primary)] items-center justify-center shadow-xl z-10 ${
+                      job.current ? "bg-cyan-500 shadow-cyan-500/20" : "bg-[var(--bg-secondary)]"
+                    }`}
+                  >
+                    <Briefcase size={22} className={job.current ? "text-slate-950" : "text-cyan-400"} />
+                  </div>
+
+                  <div className={`w-full md:w-1/2 ${isLeft ? "" : "md:order-1"}`} />
+                </motion.div>
+              );
+            })}
           </div>
         </motion.section>
 
