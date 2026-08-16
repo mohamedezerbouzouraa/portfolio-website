@@ -20,7 +20,6 @@ import {
   Server,
 } from "lucide-react";
 import { translations, Language } from "./locales/translations";
-import { AIChatbot } from "./components/chat/AIChatbot";
 import { ContactForm } from "./components/contact/ContactForm";
 import { Navbar } from "./components/layout/Navbar";
 import { ProjectModal } from "./components/projects/ProjectModal";
@@ -109,7 +108,6 @@ export default function App() {
       <CustomCursor />
       <ScrollProgress />
       <Navbar theme={theme} toggleTheme={toggleTheme} lang={lang} setLang={setLang} t={t} />
-      <AIChatbot t={t} lang={lang} />
 
       <AnimatePresence>
         {selectedProject && (
