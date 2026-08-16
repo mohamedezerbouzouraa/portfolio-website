@@ -529,7 +529,10 @@ export default function App() {
               const periodLabel = job.current ? job.period.replace("Present", t.experience.current) : job.period;
 
               const cardBody = (
-                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full">
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  className="ui-hover rounded-2xl glass border border-[var(--border-color)] hover:border-cyan-500/40 p-6 h-full transition-colors"
+                >
                   <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:justify-end md:flex-row-reverse" : ""}`}>
                     <div className="w-10 h-10 min-w-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-sm font-bold font-mono text-cyan-400">
                       {job.companyLogoInitial}
@@ -573,7 +576,7 @@ export default function App() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               );
 
               return (
