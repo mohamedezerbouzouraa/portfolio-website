@@ -558,8 +558,11 @@ export default function App() {
 
           <div className="max-w-3xl mx-auto grid grid-cols-1 gap-6">
             {certifications.map((cert) => (
-              <motion.div
+              <motion.a
                 key={cert.title}
+                href={cert.url}
+                target="_blank"
+                rel="noreferrer"
                 variants={fadeIn}
                 whileHover={{ y: -4 }}
                 className="ui-hover flex items-start gap-4 p-6 rounded-2xl glass border border-[var(--border-color)] hover:border-cyan-500/40 transition-colors"
@@ -571,7 +574,12 @@ export default function App() {
                   <h4 className="text-lg font-bold text-[var(--text-primary)] font-display leading-snug">
                     {lang === "fr" ? cert.titleFr : cert.title}
                   </h4>
-                  <p className="text-xs font-mono text-cyan-400/80">{cert.issuer}</p>
+                  <p className="text-xs font-mono text-cyan-400/80">
+                    {cert.issuer} · {t.certifications.issued} {lang === "fr" ? cert.issuedFr : cert.issuedEn}
+                  </p>
+                  <p className="text-xs font-mono text-[var(--text-secondary)] break-all">
+                    {t.certifications.credentialId}: {cert.credentialId}
+                  </p>
                   <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                     {lang === "fr" ? cert.descriptionFr : cert.descriptionEn}
                   </p>
@@ -582,8 +590,9 @@ export default function App() {
                       </span>
                     ))}
                   </div>
+                  <p className="text-xs font-mono text-cyan-400/70 pt-1">{t.certifications.show} ↗</p>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.section>
