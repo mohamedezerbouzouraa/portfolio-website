@@ -5,6 +5,7 @@ export const translations = {
       skills: "Skills",
       projects: "Projects",
       experience: "Experience",
+      certifications: "Certifications",
       education: "Education",
       blogs: "Blogs",
       languages: "Languages",
@@ -16,6 +17,7 @@ export const translations = {
       role2: "&",
       role3: "AI",
       role4: "Engineer",
+      role5: "Competitive Programmer",
       description:
         "A motivated, self-taught engineer specializing in artificial intelligence and machine learning. I design, train, and deploy intelligent models — combining solid software engineering principles with cutting-edge AI innovation to build scalable, data-driven solutions.",
       contactBtn: "Get in Touch",
@@ -47,6 +49,10 @@ export const translations = {
       title: "Experience",
       subtitle: "Hands-on AI engineering work, from computer vision pipelines to full-stack products.",
       current: "Present",
+    },
+    certifications: {
+      title: "Certifications",
+      subtitle: "Continuous learning in open generative AI engineering.",
     },
     education: {
       title: "Education",
@@ -94,7 +100,7 @@ export const translations = {
       title: "Ezer's AI Assistant",
       placeholder: "Ask me anything...",
       prompt:
-        "You are the virtual assistant for Mohamed Ezer Bouzouraa, a self-taught software and AI engineer based in Tunis, Tunisia, currently studying at INSAT. Answer questions based on this info: skills include Python, JavaScript, C/C++, Java, PHP, SQL, TensorFlow, PyTorch, scikit-learn, Deep Learning, LLMs, RAG, NumPy, Pandas, Matplotlib, MediaPipe, YOLOv8, Flask, Symfony, Git, Linux, REST APIs. Contact email: mrezeryt178@gmail.com. He is currently interning as an AI Engineer & Full-Stack Developer at Wusul Studio (Aug 2026 - Present), building a full-stack platform for house listings and relocation services with a chatbot. He previously interned as an AI Engineer at VisShop AI (Jun-Aug 2026, remote), building a client-tracking computer vision model for in-store behavior analysis. Featured projects include INSAT RAG Assistant, RLHF World Cup 2026, Reviewify, Student Advisor AI, MatchPicker AI Dashboard, YOLOv8 Car Counter, Push-Up Counter, Soccer Team Detection, RadioDx-COVID, Face Verify PCA, Lifestyle Stability Index, Geo Country Guesser, SpamGuard, Vehicle Health Predictor, Mathematicians Legacy, and a JobApplication Tracker AI built with MCP. He is open to internship and collaboration opportunities in AI/software engineering. Answer briefly, kindly, and professionally in English. Question: ",
+        "You are the virtual assistant for Mohamed Ezer Bouzouraa, a self-taught software and AI engineer based in Tunis, Tunisia, currently studying at INSAT. Answer briefly, kindly, and professionally in English. Question: ",
     },
   },
   fr: {
@@ -103,6 +109,7 @@ export const translations = {
       skills: "Compétences",
       projects: "Projets",
       experience: "Expérience",
+      certifications: "Certifications",
       education: "Formation",
       blogs: "Blogs",
       languages: "Langues",
@@ -114,6 +121,7 @@ export const translations = {
       role2: "Logiciel",
       role3: "&",
       role4: "IA",
+      role5: "Programmeur Compétitif",
       description:
         "Ingénieur autodidacte et motivé, spécialisé en intelligence artificielle et apprentissage automatique. Je conçois, entraîne et déploie des modèles intelligents en combinant des principes solides de génie logiciel avec les dernières innovations en IA pour créer des solutions évolutives, pilotées par les données.",
       contactBtn: "Me Contacter",
@@ -145,6 +153,10 @@ export const translations = {
       title: "Expérience",
       subtitle: "Travail concret en ingénierie IA, des pipelines de vision par ordinateur aux produits full-stack.",
       current: "Aujourd'hui",
+    },
+    certifications: {
+      title: "Certifications",
+      subtitle: "Formation continue en ingénierie de l'IA générative ouverte.",
     },
     education: {
       title: "Formation",
@@ -192,7 +204,7 @@ export const translations = {
       title: "Assistant IA d'Ezer",
       placeholder: "Posez-moi une question...",
       prompt:
-        "Tu es l'assistant virtuel de Mohamed Ezer Bouzouraa, ingénieur logiciel et IA autodidacte basé à Tunis, en Tunisie, actuellement étudiant à l'INSAT. Réponds aux questions en te basant sur ces informations : compétences en Python, JavaScript, C/C++, Java, PHP, SQL, TensorFlow, PyTorch, scikit-learn, Deep Learning, LLMs, RAG, NumPy, Pandas, Matplotlib, MediaPipe, YOLOv8, Flask, Symfony, Git, Linux, REST APIs. Email de contact : mrezeryt178@gmail.com. Il effectue actuellement un stage d'Ingénieur IA & Développeur Full-Stack chez Wusul Studio (depuis août 2026), où il construit une plateforme full-stack pour les annonces immobilières avec un chatbot. Il a auparavant effectué un stage d'Ingénieur IA chez VisShop AI (juin-août 2026, à distance), construisant un modèle de suivi client par vision par ordinateur. Projets phares : INSAT RAG Assistant, RLHF World Cup 2026, Reviewify, Student Advisor AI, MatchPicker AI Dashboard, YOLOv8 Car Counter, Push-Up Counter, Soccer Team Detection, RadioDx-COVID, Face Verify PCA, Lifestyle Stability Index, Geo Country Guesser, SpamGuard, Vehicle Health Predictor, Mathematicians Legacy, et un JobApplication Tracker AI basé sur MCP. Il est ouvert aux opportunités de stage et de collaboration en IA/génie logiciel. Réponds brièvement, gentiment et professionnellement en français. Question : ",
+        "Tu es l'assistant virtuel de Mohamed Ezer Bouzouraa, ingénieur logiciel et IA autodidacte basé à Tunis, en Tunisie, actuellement étudiant à l'INSAT. Réponds brièvement, gentiment et professionnellement en français. Question : ",
     },
   },
 };
