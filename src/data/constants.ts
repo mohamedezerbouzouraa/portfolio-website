@@ -1,5 +1,6 @@
 export const GITHUB_PROFILE_URL = "https://github.com/mohamedezerbouzouraa";
 export const LINKEDIN_PROFILE_URL = "https://linkedin.com/in/mohamed-ezer-bouzouraa-663489379";
+export const CODEFORCES_PROFILE_URL = "https://codeforces.com/profile/mohamedezer.bouzouraa";
 
 export type ContactItem = {
   label: string;
