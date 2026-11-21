@@ -37,9 +37,6 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   "MCP & Tools": "Model Context Protocol",
 };
 
-const placeholderImage = (seed: string) =>
-  `https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&fm=webp&q=80&w=1200&sig=${encodeURIComponent(seed)}`;
-
 // Local images live in /public/assets/images/. We prefix with Vite's BASE_URL so the
 // paths resolve correctly whether the site is deployed at the domain root or under a
 // subpath (e.g. GitHub Pages project sites like /portfolio-website/).
@@ -74,6 +71,20 @@ export const featuredProjects: Project[] = [
     result:
       "Produces a chatbot whose answer quality visibly improves over time as more feedback signals are collected from users.",
     github: "https://github.com/mohamedezerbouzouraa/RLHF-worldcup-2026",
+  },
+  {
+    category: "Agentic AI & LLMs",
+    name: "Faserli",
+    subtitle: "Local AI assistant that explains and fixes C++ errors",
+    image: localImage("eeeeeeeeee.png"),
+    tags: ["Python", "QLoRA", "MCP", "Ollama"],
+    solution:
+      "Built a fully offline AI assistant that explains C++ build and runtime errors, proposes a corrected file, verifies the fix by compiling it in a sandbox, and applies it in one click.",
+    tech:
+      "A Qwen2.5-Coder-7B model fine-tuned with QLoRA and served through Ollama, MCP tools (read_file, list_files, compile_and_run) to read the user's code, a Python agent loop, and a FastAPI web interface with a redline diff view (Original / Redline / Fixed) plus one-click Apply and Undo.",
+    result:
+      "Runs entirely on a local PC with no cloud calls. The model can only read files, while the sandbox check and the Apply button stay under the app's control, so it can never modify code on its own.",
+    github: "https://github.com/mohamedezerbouzouraa/Faserli",
   },
   {
     category: "Agentic AI & LLMs",
@@ -278,6 +289,14 @@ export const featuredProjects: Project[] = [
 ];
 
 const projectContentFr: Record<string, { solution: string; tech: string; result: string }> = {
+  "https://github.com/mohamedezerbouzouraa/Faserli": {
+    solution:
+      "Assistant IA entièrement hors ligne qui explique les erreurs de compilation et d'exécution en C++, propose un fichier corrigé, vérifie la correction en la compilant dans un bac à sable, puis l'applique en un clic.",
+    tech:
+      "Modèle Qwen2.5-Coder-7B affiné avec QLoRA et servi via Ollama, outils MCP (read_file, list_files, compile_and_run) pour lire le code de l'utilisateur, une boucle d'agent en Python, et une interface web FastAPI avec une vue redline (Original / Redline / Corrigé) et des boutons Appliquer et Annuler en un clic.",
+    result:
+      "Fonctionne entièrement sur un PC local, sans appel au cloud. Le modèle ne peut que lire les fichiers, tandis que la vérification en bac à sable et le bouton Appliquer restent contrôlés par l'application : il ne peut jamais modifier le code de lui-même.",
+  },
   "https://github.com/mohamedezerbouzouraa/RadioDx-COVID": {
     solution:
       "Modèle de deep learning qui classe les radiographies pulmonaires en Normal, Pneumonie Virale ou COVID-19, entraîné sur la base de données Kaggle COVID-19 Radiography Database.",
