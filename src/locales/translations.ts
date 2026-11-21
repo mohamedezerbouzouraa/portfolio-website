@@ -53,6 +53,9 @@ export const translations = {
     certifications: {
       title: "Certifications",
       subtitle: "Continuous learning in open generative AI engineering.",
+      issued: "Issued",
+      credentialId: "Credential ID",
+      show: "Show credential",
     },
     education: {
       title: "Education",
@@ -157,6 +160,9 @@ export const translations = {
     certifications: {
       title: "Certifications",
       subtitle: "Formation continue en ingénierie de l'IA générative ouverte.",
+      issued: "Délivré en",
+      credentialId: "ID du certificat",
+      show: "Voir le certificat",
     },
     education: {
       title: "Formation",
