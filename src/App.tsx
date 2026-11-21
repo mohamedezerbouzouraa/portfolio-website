@@ -2,6 +2,7 @@ import { ReactElement, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowRight,
+  Award,
   BookOpen,
   Brain,
   BrainCircuit,
@@ -18,6 +19,7 @@ import {
   Linkedin,
   Mail,
   Server,
+  Trophy,
 } from "lucide-react";
 import { translations, Language } from "./locales/translations";
 import { ContactForm } from "./components/contact/ContactForm";
@@ -25,7 +27,12 @@ import { Navbar } from "./components/layout/Navbar";
 import { ProjectModal } from "./components/projects/ProjectModal";
 import { CustomCursor } from "./components/ui/CustomCursor";
 import { ScrollProgress } from "./components/ui/ScrollProgress";
-import { CONTACT_ITEMS, GITHUB_PROFILE_URL, LINKEDIN_PROFILE_URL } from "./data/constants";
+import {
+  CODEFORCES_PROFILE_URL,
+  CONTACT_ITEMS,
+  GITHUB_PROFILE_URL,
+  LINKEDIN_PROFILE_URL,
+} from "./data/constants";
 import {
   categoryLabels,
   categoryOrder,
@@ -37,6 +44,7 @@ import {
 import { blogs } from "./data/blogs";
 import { spokenLanguages } from "./data/languages";
 import { experience } from "./data/experience";
+import { certifications } from "./data/certifications";
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -166,7 +174,7 @@ export default function App() {
 
               <motion.h2 variants={fadeIn} className="text-xl md:text-2xl text-[var(--text-secondary)] font-light tracking-tight">
                 {t.hero.role1} {t.hero.role2} <span className="text-cyan-400 font-semibold">{t.hero.role3}</span>{" "}
-                {t.hero.role4}
+                {t.hero.role4} - {t.hero.role5}
               </motion.h2>
 
               <motion.div variants={fadeIn} className="flex flex-wrap gap-3">
@@ -223,7 +231,7 @@ export default function App() {
                 </a>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <a
                   href={GITHUB_PROFILE_URL}
                   target="_blank"
@@ -241,6 +249,15 @@ export default function App() {
                   aria-label="Open LinkedIn"
                 >
                   <Linkedin size={16} /> LinkedIn
+                </a>
+                <a
+                  href={CODEFORCES_PROFILE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ui-hover h-11 col-span-2 sm:col-span-1 glass text-[var(--text-primary)] rounded-xl font-semibold hover:bg-white/10 transition-all border border-[var(--border-color)] flex items-center justify-center gap-2 text-sm"
+                  aria-label="Open Codeforces profile"
+                >
+                  <Trophy size={16} /> Codeforces
                 </a>
               </div>
             </motion.div>
@@ -422,88 +439,6 @@ export default function App() {
         </motion.section>
 
         <motion.section
-          id="education"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="section-spacing space-y-16 scroll-mt-24"
-        >
-          <div className="text-center space-y-4">
-            <motion.h3 variants={fadeIn} className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] font-display tracking-tight">
-              {t.education.title}
-            </motion.h3>
-            <motion.p variants={fadeIn} className="text-[var(--text-secondary)] text-base md:text-lg">
-              {t.education.subtitle}
-            </motion.p>
-          </div>
-
-          <div className="relative max-w-5xl mx-auto mt-16">
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent hidden md:block" />
-
-            <motion.div variants={fadeIn} className="relative mb-20 flex flex-col md:flex-row md:items-stretch">
-              <div className="w-full md:w-1/2 md:pr-12 lg:pr-16 mb-4 md:mb-0 md:text-right flex flex-col justify-center">
-                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full">
-                  <h4 className="text-2xl font-bold text-[var(--text-primary)] font-display">{t.education.bacSchool}</h4>
-                  <p className="text-cyan-400 text-lg font-medium mt-1">{t.education.bacTitle}</p>
-                  <div className="flex flex-wrap md:justify-end gap-2 mt-3">
-                    <span className="text-[var(--text-secondary)] text-sm bg-[var(--bg-secondary)] px-3 py-1 rounded-lg border border-[var(--border-color)] font-mono">
-                      {t.education.bacScore}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-[var(--bg-secondary)] border-8 border-[var(--bg-primary)] items-center justify-center shadow-xl z-10">
-                <Code2 size={22} className="text-cyan-400" />
-              </div>
-
-              <div className="w-full md:w-1/2 md:pl-12 lg:pl-16 flex flex-col justify-center">
-                <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block md:hidden mb-4">
-                  2024
-                </span>
-                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full hidden md:block">
-                  <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block">
-                    2024
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeIn} className="relative flex flex-col md:flex-row md:items-stretch">
-              <div className="w-full md:w-1/2 md:pr-12 lg:pr-16 mb-4 md:mb-0 md:text-right hidden md:flex flex-col justify-center items-end">
-                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 space-y-3 w-full h-full">
-                  <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block">
-                    2024 - {t.education.now}
-                  </span>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed font-light">{t.education.note}</p>
-                </div>
-              </div>
-
-              <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-cyan-500 border-8 border-[var(--bg-primary)] items-center justify-center shadow-xl shadow-cyan-500/20 z-10">
-                <GraduationCap size={22} className="text-slate-950" />
-              </div>
-
-              <div className="w-full md:w-1/2 md:pl-12 lg:pl-16 flex flex-col justify-center">
-                <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block md:hidden mb-4">
-                  2024 - {t.education.now}
-                </span>
-                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full">
-                  <h4 className="text-2xl font-bold text-[var(--text-primary)] font-display">{t.education.uni}</h4>
-                  <p className="text-[var(--text-secondary)] text-lg mt-1">{t.education.major}</p>
-                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed font-light mt-2 md:hidden">{t.education.note}</p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="text-cyan-400 text-sm bg-cyan-500/10 px-3 py-1 rounded-lg border border-cyan-500/20 font-mono font-bold">
-                      {t.education.status}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </motion.section>
-
-        <motion.section
           id="experience"
           initial="initial"
           whileInView="animate"
@@ -601,6 +536,137 @@ export default function App() {
                 </motion.div>
               );
             })}
+          </div>
+        </motion.section>
+
+        <motion.section
+          id="certifications"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="section-spacing space-y-16 scroll-mt-24"
+        >
+          <div className="text-center space-y-4">
+            <motion.h3 variants={fadeIn} className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] font-display tracking-tight">
+              {t.certifications.title}
+            </motion.h3>
+            <motion.p variants={fadeIn} className="text-[var(--text-secondary)] text-base md:text-lg">
+              {t.certifications.subtitle}
+            </motion.p>
+          </div>
+
+          <div className="max-w-3xl mx-auto grid grid-cols-1 gap-6">
+            {certifications.map((cert) => (
+              <motion.div
+                key={cert.title}
+                variants={fadeIn}
+                whileHover={{ y: -4 }}
+                className="ui-hover flex items-start gap-4 p-6 rounded-2xl glass border border-[var(--border-color)] hover:border-cyan-500/40 transition-colors"
+              >
+                <div className="w-12 h-12 min-w-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
+                  <Award size={22} className="text-cyan-400" />
+                </div>
+                <div className="space-y-2 min-w-0">
+                  <h4 className="text-lg font-bold text-[var(--text-primary)] font-display leading-snug">
+                    {lang === "fr" ? cert.titleFr : cert.title}
+                  </h4>
+                  <p className="text-xs font-mono text-cyan-400/80">{cert.issuer}</p>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    {lang === "fr" ? cert.descriptionFr : cert.descriptionEn}
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {cert.tags.map((tag) => (
+                      <span key={tag} className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-2.5 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section
+          id="education"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="section-spacing space-y-16 scroll-mt-24"
+        >
+          <div className="text-center space-y-4">
+            <motion.h3 variants={fadeIn} className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] font-display tracking-tight">
+              {t.education.title}
+            </motion.h3>
+            <motion.p variants={fadeIn} className="text-[var(--text-secondary)] text-base md:text-lg">
+              {t.education.subtitle}
+            </motion.p>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto mt-16">
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent hidden md:block" />
+
+            <motion.div variants={fadeIn} className="relative mb-20 flex flex-col md:flex-row md:items-stretch">
+              <div className="w-full md:w-1/2 md:pr-12 lg:pr-16 mb-4 md:mb-0 md:text-right flex flex-col justify-center">
+                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full">
+                  <h4 className="text-2xl font-bold text-[var(--text-primary)] font-display">{t.education.bacSchool}</h4>
+                  <p className="text-cyan-400 text-lg font-medium mt-1">{t.education.bacTitle}</p>
+                  <div className="flex flex-wrap md:justify-end gap-2 mt-3">
+                    <span className="text-[var(--text-secondary)] text-sm bg-[var(--bg-secondary)] px-3 py-1 rounded-lg border border-[var(--border-color)] font-mono">
+                      {t.education.bacScore}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-[var(--bg-secondary)] border-8 border-[var(--bg-primary)] items-center justify-center shadow-xl z-10">
+                <Code2 size={22} className="text-cyan-400" />
+              </div>
+
+              <div className="w-full md:w-1/2 md:pl-12 lg:pl-16 flex flex-col justify-center">
+                <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block md:hidden mb-4">
+                  2024
+                </span>
+                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full hidden md:block">
+                  <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block">
+                    2024
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="relative flex flex-col md:flex-row md:items-stretch">
+              <div className="w-full md:w-1/2 md:pr-12 lg:pr-16 mb-4 md:mb-0 md:text-right hidden md:flex flex-col justify-center items-end">
+                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 space-y-3 w-full h-full">
+                  <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block">
+                    2024 - {t.education.now}
+                  </span>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed font-light">{t.education.note}</p>
+                </div>
+              </div>
+
+              <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-cyan-500 border-8 border-[var(--bg-primary)] items-center justify-center shadow-xl shadow-cyan-500/20 z-10">
+                <GraduationCap size={22} className="text-slate-950" />
+              </div>
+
+              <div className="w-full md:w-1/2 md:pl-12 lg:pl-16 flex flex-col justify-center">
+                <span className="px-6 py-2 rounded-2xl bg-[var(--bg-secondary)] text-cyan-400 text-sm font-bold border border-cyan-500/20 font-mono inline-block md:hidden mb-4">
+                  2024 - {t.education.now}
+                </span>
+                <div className="rounded-2xl glass border border-[var(--border-color)] p-6 h-full">
+                  <h4 className="text-2xl font-bold text-[var(--text-primary)] font-display">{t.education.uni}</h4>
+                  <p className="text-[var(--text-secondary)] text-lg mt-1">{t.education.major}</p>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed font-light mt-2 md:hidden">{t.education.note}</p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="text-cyan-400 text-sm bg-cyan-500/10 px-3 py-1 rounded-lg border border-cyan-500/20 font-mono font-bold">
+                      {t.education.status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.section>
 
